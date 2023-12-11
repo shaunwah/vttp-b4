@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+    <div data-th-each="n : ${news}" data-th-object="${n}">
+        <h1 data-th-text="*{title}"></h1>
+        <img data-th-src="*{urlToImage}">
+        <h2 data-th-text="*{author}"></h2>
+        <p data-th-text="*{description}"></p>
+        <span data-th-text="*{publishedAt}"></span>
+        <a data-th-href="*{articleUrl}">Read Article</a>
+    </div>
+</body>
+</html>

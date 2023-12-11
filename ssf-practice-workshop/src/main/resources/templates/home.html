@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <form data-th-action="@{/news}" method="get">
+        <div>
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+                <option data-th-each="category : ${categories}" data-th-value="${category}" data-th-text="${category}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select name="country" id="country">
+                <option data-th-each="country : ${countries}" data-th-value="${country.key}" data-th-text="${country.value}"></option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
